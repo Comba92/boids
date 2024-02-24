@@ -1,4 +1,4 @@
-package.path = package.path .. ";../?.lua;D:/code/love2d/libs/?.lua"
+package.path = package.path .. ";../../?.lua;D:/code/love2d/libs/?.lua"
 QuadTree = require('quadtree')
 Vector = require('brinevector')
 

@@ -110,6 +110,11 @@ function Boid:update_quadtree(dt, qt)
   self:update(dt, neighboring)
 end
 
+function Boid:update_spatialhash(dt, sh)
+  local neighboring = sh:query(self.pos.x, self.pos.y, Boid.viewing_range, Boid.viewing_range)
+  self:update(dt, neighboring)
+end
+
 -- https://code.tutsplus.com/understanding-steering-behaviors-seek--gamedev-849t
 function Boid:seek(target)
   local desired = (target - self.pos).normalized * Boid.max_vel

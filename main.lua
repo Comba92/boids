@@ -99,12 +99,10 @@ function love.keypressed(key)
       Ctx.debug = true
       Ctx.areas = true
       Ctx.trails = false
-      Ctx.quadtree = true
     else
       Ctx.debug = false
       Ctx.trails = true
       Ctx.areas = false
-      Ctx.quadtree = false
     end
   end
 end
@@ -162,7 +160,7 @@ function love.draw()
       boid:draw()
     end
   
-    if Ctx.debug then Ctx.quadtree_boids:debug() end
+    if Ctx.debug and Ctx.quadtree then Ctx.quadtree_boids:debug() end
 
     -- local mx, my = getMouseToScaled()
     -- love.graphics.circle('line', mx, my, 5)
